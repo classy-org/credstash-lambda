@@ -39,8 +39,11 @@ module.exports = function(table, region, keys, defaults) {
         }, next);
       }
     },
-    get: (key, next) => {
-      next(secrets[key]);
+    get: (key) => {
+      if (secrets) {
+        return secrets[key];
+      }
+      throw new Error('You must load CredstashLambda first.');
     }
   };
 };
