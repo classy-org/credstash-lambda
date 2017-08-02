@@ -6,7 +6,7 @@ CredstashLambda.load(function(error) {
     if (error) {
       console.error(error);
     } else {
-      CredstashLambda.get('LOG_LOGGLY_TOKEN', console.log);
+      console.log(CredstashLambda.get('LOG_LOGGLY_TOKEN'));
     }
   });
 });
