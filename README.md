@@ -10,12 +10,12 @@ Provide reliable method to read Credstash secrets on-demand within Lambda functi
 * table: (STRING) the name of the DynamoDB table which stores encrypted secrets
 * region: (STRING) the AWS region i.e. us-west-2
 * keys: (Array[STRING]) the keys for the values you are retrieving from Credstash
-* [defaults]: (Array[STRING]) optional array of values to use in lieu of Credstash values, used for local test
+* `[defaults]`: (Array[STRING]) optional array of values to use in lieu of Credstash values, used for local test
 
 # usage
 
 ##CredstashLambda.load() / CredstashLambda.get(key)
----
+
 ```javascript
 const CredstashLambda = require('credstash-lambda')({
   table: 'TABLE_NAME',
