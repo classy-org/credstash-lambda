@@ -14,7 +14,7 @@ Provide reliable method to read Credstash secrets on-demand within Lambda functi
 
 # usage
 
-##CredstashLambda.load() / CredstashLambda.get(key)
+CredstashLambda.load() / CredstashLambda.get(key)
 
 ```javascript
 const CredstashLambda = require('credstash-lambda')({
