@@ -14,10 +14,10 @@ Provide reliable method to read Credstash secrets on-demand within Lambda functi
 
 # usage
 
-CredstashLambda.load() / CredstashLambda.get(key)
+Credstash.load() / Credstash.get(key)
 
 ```javascript
-const CredstashLambda = require('credstash-lambda')({
+const Credstash = require('credstash-lambda')({
   table: 'TABLE_NAME',
   region: 'AWS_REGION',
   keys: ['SAMPLE_KEY']
@@ -29,11 +29,11 @@ function doSomething(..., sampleValue, callback) {
 }
 
 module.exports.handle = (event, context, callback) => {
-  CredstashLambda.load(function(error) {
+  Credstash.load(function(error) {
     if (error) {
       callback(error);
     } else {
-      let sampleValue = CredstashLambda.get('SAMPLE_KEY');
+      let sampleValue = Credstash.get('SAMPLE_KEY');
       console.log(`SAMPLE_KEY: ${sampleValue}`);
       doSomething(..., sampleValue, callback);
     }
