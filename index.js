@@ -42,7 +42,7 @@ module.exports = function(config) {
     },
     get: (key) => {
       if (secrets) {
-        return secrets[key];
+        return _.get(secrets, key, null);
       }
       throw new Error('You must load CredstashLambda first.');
     }
