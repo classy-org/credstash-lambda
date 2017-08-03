@@ -1,6 +1,6 @@
 {
   "name": "credstash-lambda",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Provide reliable method to read Credstash values on-demand within Lambda functions.",
   "main": "index.js",
   "scripts": {
@@ -15,7 +15,7 @@
     "lambda"
   ],
   "author": "jingram@classy.org",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/jnngrm/credstash-lambda/issues"
   },
