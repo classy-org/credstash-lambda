@@ -1,5 +1,8 @@
-const CredstashLambda = require('../index.js')(process.argv[2],
-  process.argv[3], JSON.parse(process.argv[4]));
+const CredstashLambda = require('../index.js')({
+  table: process.argv[2],
+  region: process.argv[3],
+  keys: JSON.parse(process.argv[4])
+});
 
 CredstashLambda.load(function(error) {
   CredstashLambda.load(function(error) {

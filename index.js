@@ -9,9 +9,10 @@ function stringToBool(result) {
   return (result === 'true' || result === 'false') ? result === 'true' : result;
 }
 
-module.exports = function(table, region, keys, defaults) {
-  secrets = defaults;
-  if (!secrets && (!table || !region || !_.isArray(keys))) {
+module.exports = function(config) {
+  secrets = config ? config.defaults : null;
+  if (!secrets && (!config || !config.table || !config.region ||
+    !_.isArray(config.keys))) {
     throw new Error(`You must provide the credstash table name,
       AWS region, and array of keys.`);
   }
@@ -22,12 +23,12 @@ module.exports = function(table, region, keys, defaults) {
       } else {
         secrets = {};
         let credstash = new Credstash({
-          table,
+          table: config.table,
           awsOpts: {
-            region
+            region: config.region
           }
         });
-        async.each(keys, function(key, callback) {
+        async.each(config.keys, function(key, callback) {
           credstash.getSecret({
             name: key
           }, function(error, value) {
