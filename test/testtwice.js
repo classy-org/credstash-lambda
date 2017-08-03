@@ -4,7 +4,7 @@ const CredstashLambda = require('../index.js')({
   keys: JSON.parse(process.argv[4])
 });
 
-CredstashLambda.load(function(error) {
+CredstashLambda.load(function() {
   CredstashLambda.load(function(error) {
     if (error) {
       console.error(error);
