@@ -17,7 +17,7 @@ module.exports = function(config) {
       AWS region, and array of keys.`);
   }
   return {
-    load: next => {
+    load: (Config, next) => {
       if (secrets) {
         next();
       } else {
