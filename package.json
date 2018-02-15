@@ -1,6 +1,6 @@
 {
   "name": "credstash-lambda",
-  "version": "1.0.12",
+  "version": "1.0.13",
   "description": "Provide reliable method to read Credstash values on-demand within Lambda functions.",
   "main": "index.js",
   "scripts": {
@@ -21,9 +21,9 @@
   },
   "homepage": "https://github.com/jnngrm/credstash-lambda#readme",
   "dependencies": {
-    "async": "^2.5.0",
-    "lodash": "^4.17.4",
-    "nodecredstash": "^1.1.0"
+    "async": "^2.6.0",
+    "lodash": "^4.17.5",
+    "nodecredstash": "^1.1.1"
   },
   "devDependencies": {
     "eslint": "^4.3.0",
