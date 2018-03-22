@@ -37,7 +37,9 @@ module.exports = function(config) {
             }
             callback(error);
           });
-        }, next);
+        }, err => {
+          _.defer(next, [err]);
+        });
       }
     },
     get: (key) => {
