@@ -31,11 +31,11 @@ module.exports = function(config) {
         async.each(config.keys, function(key, callback) {
           credstash.getSecret({
             name: key
-          }, function(error, value) {
-            if (!error) {
-              secrets[key] = stringToBool(value);
-            }
+          }).catch(error => {
             callback(error);
+          }).then(value => {
+            secrets[key] = stringToBool(value);
+            callback();
           });
         }, next);
       }
