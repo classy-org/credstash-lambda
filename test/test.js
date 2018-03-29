@@ -1,5 +1,5 @@
 const keys = JSON.parse(process.argv[4]);
-const Credstash = require('../bin/index.js')({
+const Credstash = require('../lib/index.js')({
   table: process.argv[2],
   region: process.argv[3],
   keys

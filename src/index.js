@@ -29,7 +29,7 @@ module.exports = function(config) {
     loadAsync: async function() {
       if (!initializationOnce) {
         initializationOnce = new Once(async () => {
-          secrets = {};
+          let loadingSecrets = {};
           let credstash = new Credstash({
             table: config.table,
             awsOpts: {
@@ -40,8 +40,10 @@ module.exports = function(config) {
           for (let i = 0; i < config.keys.length; i++) {
             const key = config.keys[i];
             let secret = await credstash.getSecret({name: key});
-            secrets[key] = stringToBool(secret);
+            loadingSecrets[key] = stringToBool(secret);
           }
+
+          secrets = loadingSecrets;
         });
       }
       await initializationOnce.do();
