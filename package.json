@@ -2,9 +2,9 @@
   "name": "credstash-lambda",
   "version": "1.0.14",
   "description": "Provide reliable method to read Credstash values on-demand within Lambda functions.",
-  "main": "bin/index.js",
+  "main": "lib/index.js",
   "scripts": {
-    "build": "babel --out-dir bin src",
+    "build": "babel --out-dir lib src",
     "prepublish": "yarn run build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -36,6 +36,6 @@
     "eslint-config-google": "^0.9.1"
   },
   "files": [
-    "bin"
+    "lib"
   ]
 }
