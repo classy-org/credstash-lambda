@@ -23,9 +23,9 @@
   },
   "homepage": "https://github.com/jnngrm/credstash-lambda#readme",
   "dependencies": {
-    "babel-polyfill": "^6.26.0",
     "lodash": "^4.17.5",
-    "nodecredstash": "^2.0.1"
+    "nodecredstash": "^2.0.1",
+    "regenerator-runtime": "^0.11.1"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
@@ -35,5 +35,7 @@
     "eslint": "^4.17.0",
     "eslint-config-google": "^0.9.1"
   },
-  "files": ["bin"]
+  "files": [
+    "bin"
+  ]
 }

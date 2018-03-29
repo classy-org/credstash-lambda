@@ -1,5 +1,5 @@
 'use strict';
-require('babel-polyfill');
+require('regenerator-runtime/runtime');
 const Credstash = require('nodecredstash');
 const _ = require('lodash');
 
