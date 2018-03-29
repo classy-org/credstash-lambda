@@ -2,8 +2,10 @@
   "name": "credstash-lambda",
   "version": "1.0.14",
   "description": "Provide reliable method to read Credstash values on-demand within Lambda functions.",
-  "main": "index.js",
+  "main": "lib/index.js",
   "scripts": {
+    "build": "babel --out-dir lib src",
+    "prepublish": "yarn run build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -21,12 +23,19 @@
   },
   "homepage": "https://github.com/jnngrm/credstash-lambda#readme",
   "dependencies": {
-    "async": "^2.6.0",
     "lodash": "^4.17.5",
-    "nodecredstash": "^2.0.1"
+    "nodecredstash": "^2.0.1",
+    "regenerator-runtime": "^0.11.1"
   },
   "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-plugin-syntax-async-functions": "^6.13.0",
+    "babel-plugin-transform-regenerator": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
     "eslint": "^4.17.0",
     "eslint-config-google": "^0.9.1"
-  }
+  },
+  "files": [
+    "lib"
+  ]
 }

@@ -60,3 +60,6 @@ typings/
 # IntelliJ Project Files
 .idea/
 
+# Transpiled code
+lib/
+
