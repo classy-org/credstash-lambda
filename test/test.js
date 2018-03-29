@@ -5,6 +5,12 @@ const Credstash = require('../lib/index.js')({
   keys
 });
 
+Credstash.getAsync(keys[0]).then(value => {
+  console.log(value);
+}).catch(error => {
+  console.log(error);
+});
+
 Credstash.load(function(error) {
   if (error) {
     console.error(error);

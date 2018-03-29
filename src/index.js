@@ -58,11 +58,15 @@ module.exports = function(config) {
         _.defer(next, error);
       });
     },
-    get: (key) => {
+    get: function(key) {
       if (secrets) {
         return _.get(secrets, key, null);
       }
       throw new Error('You must load CredstashLambda first.');
+    },
+    getAsync: async function(key) {
+      await this.loadAsync();
+      return _.get(secrets, key, null);
     }
   };
 };
