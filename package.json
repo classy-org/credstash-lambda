@@ -1,6 +1,6 @@
 {
   "name": "credstash-lambda",
-  "version": "1.0.14",
+  "version": "1.1.0",
   "description": "Provide reliable method to read Credstash values on-demand within Lambda functions.",
   "main": "lib/index.js",
   "scripts": {
